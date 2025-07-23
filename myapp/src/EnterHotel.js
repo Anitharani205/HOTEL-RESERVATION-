@@ -27,7 +27,6 @@ const EnterHotel = () => {
     fetchRooms();
   }, []);
 
-  // Pre-check location filter from type
   useEffect(() => {
     if (type) {
       setFilters((prev) => ({
@@ -37,7 +36,6 @@ const EnterHotel = () => {
     }
   }, [type]);
 
-  // Auto scroll to top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

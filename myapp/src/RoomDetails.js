@@ -17,7 +17,7 @@ const RoomDetails = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  // Fetch room details by id on mount
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/rooms/${id}`)
@@ -27,7 +27,7 @@ const RoomDetails = () => {
 
   if (!room) return <p>Loading room details...</p>;
 
-  // Calculate price after discount
+  
   const calculateDiscountPrice = (price, discount) => {
     return (price - (price * discount) / 100).toFixed(2);
   };
@@ -35,7 +35,7 @@ const RoomDetails = () => {
   const discountedPrice = calculateDiscountPrice(room.price, room.discount || 0);
   const totalPrice = (discountedPrice * bookingDetails.rooms).toFixed(2);
 
-  // Basic form validations before booking
+  
   const validateBooking = () => {
     const { name, email, phone, checkIn, checkOut, members } = bookingDetails;
 
@@ -67,7 +67,7 @@ const RoomDetails = () => {
     return true;
   };
 
-  // Handle booking submission
+  
   const handleBooking = async () => {
     if (!validateBooking()) return;
 
@@ -88,7 +88,7 @@ const RoomDetails = () => {
       });
     } catch (err) {
       if (err.response && err.response.status === 400) {
-        // Show backend error like overlapping booking message
+       
         alert(err.response.data.message);
       } else {
         alert("Booking failed. Try again.");
@@ -98,7 +98,7 @@ const RoomDetails = () => {
     }
   };
 
-  // Disable booking button if required fields are missing or currently loading
+  
   const isBookingDisabled =
     !bookingDetails.name ||
     !bookingDetails.email ||

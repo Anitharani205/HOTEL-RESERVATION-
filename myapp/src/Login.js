@@ -27,7 +27,7 @@ function Login() {
     }
 
     if (role === "admin") {
-      // Check frontend admin credentials
+      
       if (email === adminCredentials.email && password === adminCredentials.password) {
         localStorage.setItem("role", "admin");
         localStorage.setItem("name", "Admin");
@@ -36,7 +36,6 @@ function Login() {
         setError("Invalid admin credentials");
       }
     } else {
-      // User login via backend
       try {
         const res = await fetch("http://localhost:5000/login", {
           method: "POST",

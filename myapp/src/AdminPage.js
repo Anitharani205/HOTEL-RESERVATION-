@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';  // <-- For navigation after logout
+import { useNavigate } from 'react-router-dom';  
 import './AdminPage.css';
 
 const AdminPage = () => {
@@ -11,8 +11,7 @@ const AdminPage = () => {
   });
   const [editingRoomId, setEditingRoomId] = useState(null);
 
-  const navigate = useNavigate();  // <-- Initialize navigate
-
+  const navigate = useNavigate();  
   useEffect(() => {
     fetchRooms();
   }, []);
@@ -63,18 +62,17 @@ const AdminPage = () => {
     }
   };
 
-  // Logout function
+  
   const handleLogout = () => {
-    // Clear any stored auth info
+   
     localStorage.removeItem('token');
     localStorage.removeItem('role');
-    // Redirect to login page
     navigate('/login');
   };
 
   return (
     <div className="admin-container">
-      {/* Logout button top right */}
+      
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
         <button onClick={handleLogout} className="logout-btn">
           Logout

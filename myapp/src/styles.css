@@ -148,7 +148,7 @@
   }
   .rooms-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-fill with responsive columns */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     gap: 100px;
     padding: 20px;
   }
@@ -471,7 +471,7 @@
     box-sizing: border-box;
   }
   
-  /* Modal Styling */
+ 
   .modal {
     position: fixed;
     top: 0;
@@ -525,7 +525,7 @@
     background-color: #4CAF50;
   }
   
-  /* Header */
+  
   .header h1 {
     font-size: 36px;
     color: #1f8a70;
@@ -533,7 +533,7 @@
     text-align: center;
   }
   
-  /* Booking Details */
+  
   .booking-details {
     background-color: #fff;
     border-radius: 10px;
@@ -564,7 +564,7 @@
     font-weight: bold;
   }
   
-  /* Agreement Section */
+  
   .agreement-section {
     margin-top: 30px;
     font-size: 16px;
@@ -574,7 +574,7 @@
     margin-right: 10px;
   }
   
-  /* Confirmation Text */
+ 
   .confirmation-text {
     font-size: 20px;
     text-align: center;
@@ -582,7 +582,6 @@
     color: #666;
   }
   
-  /* Animations */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -783,7 +782,7 @@
     font-weight: bold;
   }
   
-  /* Responsive */
+  
   @media (max-width: 900px) {
     .room-content {
         flex-direction: column;
